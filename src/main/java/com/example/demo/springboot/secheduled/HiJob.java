@@ -16,7 +16,7 @@ public class HiJob extends QuartzJobBean {
     protected void executeInternal(JobExecutionContext jobExecutionContext) throws JobExecutionException {
         List<Student> students = studentMapper.selectStudentList();
         students.forEach(student -> {
-            iMailService.sendSimpleMail("3322700080@qq.com","邮件主题",student.getName()+"祝你生日快乐");
+            iMailService.sendSimpleMail("kh17754032397@163.com","邮件主题",student.getName()+"祝你生日快乐");
             student.setStudentStatus("YES");
             studentMapper.updateById(student);
         });
